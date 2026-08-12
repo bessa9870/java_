@@ -24,16 +24,15 @@ O objeto é tão simples quanto, em C, ele seria a variável declarada na main q
 | A planta baixa de uma casa | A casa construída |
 | Uma fórmula somar dois números (n + n) | A soma implementada (1 + 2) |
 
-[Uploading RetanguloPrincipapackage exercicio1;
-
-class Retangulo{
-    double largura, altura;
-}
-
-public class RetanguloPrincipal{
-    static public void main(String[] args){
-        Retangulo obRetangulo;  // Instâncio o objeto da classe Retangulo
-        obRetangulo = new Retangulo();  // Crio o objeto
+```java
+  class Retangulo{
+      double largura, altura;
+  }
+  
+  public class RetanguloPrincipal{
+      static public void main(String[] args){
+          Retangulo obRetangulo;  // Instâncio o objeto da classe Retangulo
+          obRetangulo = new Retangulo();  // Crio o objeto
 
         obRetangulo.largura = 5.0;  // Acesso os atributos da classe usando o objeto
         obRetangulo.altura = 10.0;
@@ -45,4 +44,5 @@ public class RetanguloPrincipal{
         System.out.printf("Área do retângulo: %.2f\n", area);
         System.out.printf("Diagonal do retângulo: %.2f\n", diagonal);
     }
-}l.java…]()
+}
+```
