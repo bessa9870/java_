@@ -14,9 +14,6 @@ Pegando de uma perspectiva de alguém que veio do C puro: Uma classe é uma stru
 
 ### Objeto:
 O objeto é tão simples quanto, em C, ele seria a variável declarada na main que é do tipo struct. Na programação orientada a objetos a definição seria: **A instância física da classe**, essa instância é uma variável do tipo <classe> que pode acessar as variáveis e métodos dentro da classe. Em Java você cria o objeto e seguidamente, o aloca na memória RAM usando o parâmetro **new**:
-  1. <classe>  <nome_objeto>;  //Aqui você cria a **Variável de referência** que guarda um objeto.)
-  2. <nome_objeto> **new** <construtor()>;  //Aqui você aloca na memória
-  3. <classe> <nome_projeto> new <construtor()>;  //Também da pra fazer tudo numa linha só
 
 | Classe | Objeto |
 | :-- | :-- |
@@ -24,19 +21,24 @@ O objeto é tão simples quanto, em C, ele seria a variável declarada na main q
 | A planta baixa de uma casa | A casa construída |
 | Uma fórmula somar dois números (n + n) | A soma implementada (1 + 2) |
 
-```java
-class Retangulo{
-    double largura, altura;
+Como instanciar uma classe:
+  1. <classe>  <nome_objeto>;  //Aqui você cria a **Variável de referência** que guarda um objeto.)
+  2. <nome_objeto> **new** <construtor()>;  //Aqui você aloca na memória
+  3. <classe> <nome_projeto> new <construtor()>;  //Também da pra fazer tudo numa linha só
 
-    double calcularArea(){
+```java
+class Retangulo{  // Clase secundária
+    double largura, altura;  // Atributos
+
+    double calcularArea(){  // Método que trabalhará com os atributos da classe
         return largura * altura;
     }
 }
 
-public class RetanguloPrincipal{
-    static public void main(String[] args){
+public class RetanguloPrincipal{  // Classe principal
+    static public void main(String[] args){  // Método principal
         Retangulo obRetangulo;  // Crio a variável de referência
-        obRetangulo = new Retangulo();  // Crio o objeto
+        obRetangulo = new Retangulo();  // Instancio um objeto
 
         obRetangulo.largura = 5.0;  // Acesso os atributos da classe usando o objeto
         obRetangulo.altura = 10.0;
@@ -54,13 +56,15 @@ Pegando este código-fonte como exemplo:
   3. static public void main(String[] args): É o método principal dentro da classe principal;
   4. Retangulo **obRetangulo**: Declara-se a variável que acessará os membros da classe;
   5. obRetangulo = ***new Retangulo()**: Aloca o objeto na memória, aponta para a classe Retangulo;
+*Todo código-fonte está dentro de um método dentro de uma classe. A única exceção são os atributos de uma classe, que são declarados sem a necessidade de encapsulamento em um método.*
 
 ### Construtores
-Um construtor é um bloco de código no programa que segue duas regras bem definidas: 
+Um construtor é um bloco de código no programa que segue três regras bem definidas: 
   1. Deve levar o mesmo nome da classe o qual instancia;
-  2. Não ter tipo de retorno (nem void).
+  2. Não ter tipo de retorno (nem void);
+  3. Capacidade de receber parâmetros;
 
-O construtor é um método de inicialização de variáveis que é executado uma única vez em todo o código, no momento da alocação do objeto na memória RAM. Ele inicializa os atributos da classe usando valores definidos pelo programador. Ao invés de usar as linhas:
+O construtor é um método de inicialização de variáveis que é **executado uma única vez em todo o código**, no momento da alocação do objeto na memória RAM. Ele inicializa os atributos da classe usando valores definidos pelo programador. Ao invés de usar as linhas:
 ```Java
 obRetangulo.largura = 5.0;
 obRetangulo.altura = 10.0;
@@ -87,13 +91,11 @@ Você pode pedir os valores antes de criar a instância:
 Scanner input = new Scanner(System.in);
 
 System.out.print("Digite a largura: ");
-double l = input.nextDouble(); // 1. Lê o valor do usuário 🔢
-
+double l = input.nextDouble();
 System.out.print("Digite a altura: ");
-double a = input.nextDouble(); // 2. Lê outro valor 🔢
-
+double a = input.nextDouble();
 System.out.print("Digite a profundidade: ");
-double p = input.nextDouble(); // 3. Lê outro valor 🔢
+double p = input.nextDouble();
 
 Caixa obCaixa = new Caixa(l, a, p);
 ```
