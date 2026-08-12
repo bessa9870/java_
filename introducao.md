@@ -1,4 +1,4 @@
-[RetanguloPrincipal.java](https://github.com/user-attachments/files/30987374/RetanguloPrincipal.java)# PROGRAMAÇÃO ORIENTADA A OBJETOS
+# PROGRAMAÇÃO ORIENTADA A OBJETOS
 
 ## Classes, objetos e métodos:
 
@@ -25,24 +25,59 @@ O objeto é tão simples quanto, em C, ele seria a variável declarada na main q
 | Uma fórmula somar dois números (n + n) | A soma implementada (1 + 2) |
 
 ```java
-  class Retangulo{
-      double largura, altura;
-  }
-  
-  public class RetanguloPrincipal{
-      static public void main(String[] args){
-          Retangulo obRetangulo;  // Instâncio o objeto da classe Retangulo
-          obRetangulo = new Retangulo();  // Crio o objeto
+class Retangulo{
+    double largura, altura;
+
+    double calcularArea(){
+        return largura * altura;
+    }
+}
+
+public class RetanguloPrincipal{
+    static public void main(String[] args){
+        Retangulo obRetangulo;  // Crio a variável de referência
+        obRetangulo = new Retangulo();  // Crio o objeto
 
         obRetangulo.largura = 5.0;  // Acesso os atributos da classe usando o objeto
         obRetangulo.altura = 10.0;
 
-        double area = obRetangulo.largura * obRetangulo.altura;  // Calculo a área do retângulo
-        double diagonal = Math.sqrt((obRetangulo.largura * obRetangulo.largura) + (obRetangulo.altura * obRetangulo.altura));  // Calculo a diagonal do retângulo
+        double area = obRetangulo.calcularArea();  // Calculo a área do retângulo
 
         System.out.printf("largura %.2f\nAltura %.2f\n", obRetangulo.largura, obRetangulo.altura);
         System.out.printf("Área do retângulo: %.2f\n", area);
-        System.out.printf("Diagonal do retângulo: %.2f\n", diagonal);
     }
 }
+```
+Pegando este código-fonte como exemplo:
+  1. class **Retangulo**: É uma das classes;
+  2. public class **RetanguloPrincipal**: É a classe principal, o nome do arquivo;
+  3. static public void main(String[] args): É o método principal dentro da classe principal;
+  4. Retangulo **obRetangulo**: Declara-se a variável que acessará os membros da classe;
+  5. obRetangulo = ***new Retangulo()**: Aloca o objeto na memória, aponta para a classe Retangulo;
+
+### Construtores
+Um construtor é um bloco de código no programa que segue duas regras bem definidas: 
+  1. Deve levar o mesmo nome da classe o qual instancia;
+  2. Não ter tipo de retorno (nem void).
+
+O construtor é um método de inicialização de variáveis que é executado no momento da alocação do objeto previamente instanciado, na memória RAM. Ele inicializa os atributos da classe usando valores definidos pelo programador. Ao invés de usar as linhas:
+```Java
+    obRetangulo.largura = 5.0;
+    obRetangulo.altura = 10.0;
+```
+Basta criar o construtor como membro da classe e atribuir parâmetros:
+```Java
+    class Retangulo{
+        double largura, altura;
+  
+        Retangulo(double x, double y){
+            largura = x;
+            altura = y;
+        }      
+}
+```
+E inicializar os atributos em uma só linha na classe principal:
+```Java
+  static public void main(String[] args){
+        Retangulo obRetangulo = new Retangulo(4,5);
 ```
