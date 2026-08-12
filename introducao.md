@@ -1,6 +1,6 @@
 # PROGRAMAÇÃO ORIENTADA A OBJETOS
 
-## Classes, objetos e métodos:
+## Classes, objetos, métodos e construtores:
 
 ### Paradigma orientado a objetos:
 Na programação existem diferentes modos que podemos adotar para resolver problemas e estruturas sistemas, chamamos isso de: **Paradigmas de programação**. A programação orientada a objetos é um desses paradigmas. Ele foca em juntar todos os dados e funções que seriam independentes, e encapsulá-los dentro de classes, tratando-os como atributos(variáveis)e métodos(funções de processamento) membros da classe.
@@ -14,7 +14,7 @@ Pegando de uma perspectiva de alguém que veio do C puro: Uma classe é uma stru
 
 ### Objeto:
 O objeto é tão simples quanto, em C, ele seria a variável declarada na main que é do tipo struct. Na programação orientada a objetos a definição seria: **A instância física da classe**, essa instância é uma variável do tipo <classe> que pode acessar as variáveis e métodos dentro da classe. Em Java você cria o objeto e seguidamente, o aloca na memória RAM usando o parâmetro **new**:
-  1. <classe>  <nome_objeto>;  //Aqui você cria a instância (**Variável de referência**:guarda um objeto.)
+  1. <classe>  <nome_objeto>;  //Aqui você cria a **Variável de referência** que guarda um objeto.)
   2. <nome_objeto> **new** <construtor()>;  //Aqui você aloca na memória
   3. <classe> <nome_projeto> new <construtor()>;  //Também da pra fazer tudo numa linha só
 
@@ -60,19 +60,19 @@ Um construtor é um bloco de código no programa que segue duas regras bem defin
   1. Deve levar o mesmo nome da classe o qual instancia;
   2. Não ter tipo de retorno (nem void).
 
-O construtor é um método de inicialização de variáveis que é executado no momento da alocação do objeto previamente instanciado, na memória RAM. Ele inicializa os atributos da classe usando valores definidos pelo programador. Ao invés de usar as linhas:
+O construtor é um método de inicialização de variáveis que é executado uma única vez em todo o código, no momento da alocação do objeto na memória RAM. Ele inicializa os atributos da classe usando valores definidos pelo programador. Ao invés de usar as linhas:
 ```Java
-    obRetangulo.largura = 5.0;
-    obRetangulo.altura = 10.0;
+obRetangulo.largura = 5.0;
+obRetangulo.altura = 10.0;
 ```
 Basta criar o construtor como membro da classe e atribuir parâmetros:
 ```Java
-    class Retangulo{
-        double largura, altura;
+class Retangulo{
+    double largura, altura;
   
-        Retangulo(double x, double y){
-            largura = x;
-            altura = y;
+    Retangulo(double x, double y){
+      largura = x;
+      altura = y;
         }      
 }
 ```
@@ -80,4 +80,33 @@ E inicializar os atributos em uma só linha na classe principal:
 ```Java
   static public void main(String[] args){
         Retangulo obRetangulo = new Retangulo(4,5);
+```
+
+Você pode pedir os valores antes de criar a instância:
+```Java
+Scanner input = new Scanner(System.in);
+
+System.out.print("Digite a largura: ");
+double l = input.nextDouble(); // 1. Lê o valor do usuário 🔢
+
+System.out.print("Digite a altura: ");
+double a = input.nextDouble(); // 2. Lê outro valor 🔢
+
+System.out.print("Digite a profundidade: ");
+double p = input.nextDouble(); // 3. Lê outro valor 🔢
+
+Caixa obCaixa = new Caixa(l, a, p);
+```
+
+O construtor pode ser utilizado como validação de entrada, impedindo o código de trabalhar com atributos não inicializadas:
+```Java
+Caixa(double x, double y, double z) {
+    if (x <= 0 || y <= 0 || z <= 0) {
+        System.out.println("Erro: Dimensões devem ser maiores que zero!");
+    } else {
+        largura = x;
+        altura = y;
+        profundidade = z;
+    }
+}
 ```
