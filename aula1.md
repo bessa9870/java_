@@ -24,7 +24,7 @@ O objeto é tão simples quanto, em C, ele seria a variável declarada na main q
 | Uma fórmula somar dois números (n + n) | A soma implementada (1 + 2) |
 
 Como instanciar uma classe:
-  1. <classe>  <nome_objeto>;  //Aqui você cria a **Variável de referência** que guarda um objeto.)
+  1. <classe> <nome_objeto>;  //Aqui você cria a **Variável de referência** que guarda um objeto.)
   2. <nome_objeto> **new** <construtor()>;  //Aqui você aloca na memória
   3. <classe> <nome_projeto> new <construtor()>;  //Também da pra fazer tudo numa linha só
 
