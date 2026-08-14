@@ -7,10 +7,12 @@ Na programação existem diferentes modos que podemos adotar para resolver probl
 
 ### Classes:
 Pegando de uma perspectiva de alguém que veio do C puro: Uma classe é uma struct bufada que declara as variáveis e também contêm os funções(métodos) que iram trabalhar com essas variáveis. Na programação orientada a objetos dá pra definir uma classe facilmente como: **Construção lógica que define um objeto**. Em Java, tudo obrigatoriamente deve estar encapsulado em uma classe, e a identificação da classe principal deve levar o mesmo nome do arquivo .java onde está a classe principal.
-*(Naturalmente, uma classe não ocupa espaço na memória RAM tal qual uma struct.)*
+  - Em POO tudo deve ficar dentro de uma classe;
   - Variáveis dentro de uma classe são chamados: **Variáveis de instância/Atributos**;
   - Os métodos e variáveis definidas em uma classe são chamados de **membros da classe**.
   - Já dentro das classes, **todo código deve estar dentro de um método**, nada fica solto como na programação sequencial onde bastava seguir a ordem.
+
+*(Naturalmente, uma classe não ocupa espaço na memória RAM tal qual uma struct.)*
 
 ### Objeto:
 O objeto é tão simples quanto, em C, ele seria a variável declarada na main que é do tipo struct. Na programação orientada a objetos a definição seria: **A instância física da classe**, essa instância é uma variável do tipo <classe> que pode acessar as variáveis e métodos dentro da classe. Em Java você cria o objeto e seguidamente, o aloca na memória RAM usando o parâmetro **new**:
