@@ -61,6 +61,7 @@ class Quadrado{
 	}
 }
 ...
+// Em outra classe ou na classe principal:
 double areaQ = Quadrado.areaQuadrado(x);
 ```
 ## Criando uma constante global:
@@ -68,7 +69,7 @@ Quando eu declarava uma constante global em C, usava `#define CONSTANTE` antes d
 ```JAVA
 static final PI = 3.14
 ...
-// Em outra classe:
+// Em outra classe ou na classe principal:
 ClasseGenerica.PI	// Acessa a constante.
 ```
 Mas, por que usar o `static` na frente do `final`? De fato, ele é **imutável**, mas cada nova instância da classe vai criar uma cópia da constante. Se você criar 1000 instâncias, terá 1000 cópias. Então, para anular essa característica, usamos a característica única do `static` que transforma o que estiver na sua direta em uma única cópia.
