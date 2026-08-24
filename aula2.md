@@ -38,7 +38,7 @@ public class CalcularCaixa{
 ## Modificadores static e final:
 
 ### final:
-Quando eu declarava uma constante em C, usava #define CONSTANTE antes de quaisquer declarações. Para criar uma constante em JAVA o modificador é o `final`, isso cria um **atributo global e imutável** que 
+Quando eu declarava uma constante em C, usava `#define CONSTANTE` antes de quaisquer declarações. Para criar uma constante em JAVA o modificador é o `final`, isso cria um **atributo global e imutável** que 
 será visível por todos as classes no programa contanto que sua classe esteja referenciada por um objeto.
 ```JAVA
 static final PI = 3.14
