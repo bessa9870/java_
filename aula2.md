@@ -38,15 +38,22 @@ public class CalcularCaixa{
 ## Modificadores static e final:
 
 ### final:
-Quando eu declarava uma constante em C, usava `#define CONSTANTE` antes de quaisquer declarações. Para criar uma constante em JAVA o modificador é o `final`, isso cria um **atributo global e imutável** que 
-será visível por todos as classes no programa contanto que sua classe esteja referenciada por um objeto.
+O modificador `final` transforma uma variável de instância numa constante. O valor da constante é único para cada objeto, por exemplo o CPF, data de nascimento, placa de veículo. Trazendo o conceito de um assunto que eu estou estudando agora: final seria o **Identificador único*** de uma entidade.
 ```JAVA
-static final PI = 3.14
+class Pessoa {
+    final String cpf;
+    String nome;
+
+    Pessoa(String cpfDigitado, String nomeDigitado) {
+        this.cpf = cpfDigitado; // Aqui o CPF é travado para sempre neste objeto.
+        this.nome = nomeDigitado;
+    }
+}
 ```
-Mas, por que usar o `static` na frente do `final`? De fato, ele é **imutável**, mas cada nova instância da classe vai criar uma cópia da constante. Se você criar 1000 instâncias, terá 1000 cópias. Então, para anular essa característica, usamos a característica única do `static`.
+Como visto a cima, não há problema declarar a constante vazia, contanto que ela vá ser iniciada em um construtor, uma vez definido o valor da fina, o JAVA não aceitará em hipótese alguma, uma mudança nesse valor, resultando em erro de compilação.
 
 ### Static:
-O `static` é quase como um parâmetro passado por valor do C. Ao criar um atributo estático, cria-se uma única cópia do que estiver a direta do modificador, todas as classes e objetos em qualquer lugar do projeto compartilharam essa mesma cópia como um ponteiro, uma variável passada por valor para várias structs, onde quer que eu altere essa variável, essa alteração terá escopo global. Quando se cria um método estático, não é necessário instanciar um objeto da classe onde o método estático está, basta acessar o método usando o nome da classe.
+O `static` é quase como um parâmetro passado por referência em C. Ao criar um atributo estático, cria-se uma única cópia do que estiver a direta do modificador, todas as classes e objetos em qualquer lugar do projeto compartilharam essa mesma cópia como um ponteiro, uma variável passada por valor para várias structs, onde quer que eu altere essa variável, essa alteração terá escopo global. Quando se cria um método estático, não é necessário instanciar um objeto da classe onde o método estático está, basta acessar o método usando o nome da classe.
 ```JAVA
 class Quadrado{
 	static double areaQuadrado(double x){
@@ -56,3 +63,12 @@ class Quadrado{
 ...
 double areaQ = Quadrado.areaQuadrado(x);
 ```
+## Criando uma constante global:
+Quando eu declarava uma constante global em C, usava `#define CONSTANTE` antes de quaisquer declarações. Para criar uma constante em JAVA juntamos os dois modificadores `static final constante`, isso cria um **atributo global e imutável** que será visível por todos as classes no programa contanto que esteja dentro de uma classe.
+```JAVA
+static final PI = 3.14
+...
+// Em outra classe:
+ClasseGenerica.PI	// Acessa a constante.
+```
+Mas, por que usar o `static` na frente do `final`? De fato, ele é **imutável**, mas cada nova instância da classe vai criar uma cópia da constante. Se você criar 1000 instâncias, terá 1000 cópias. Então, para anular essa característica, usamos a característica única do `static` que transforma o que estiver na sua direta em uma única cópia.
