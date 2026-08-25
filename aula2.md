@@ -73,7 +73,7 @@ class Pessoa {
 Como visto a cima, não há problema declarar a constante vazia, contanto que ela vá ser iniciada em um construtor, uma vez definido o valor da fina, o JAVA não aceitará em hipótese alguma, uma mudança nesse valor, resultando em erro de compilação.
 
 ### Static:
-O `static` é quase como um parâmetro passado por referência em C. Ao criar um atributo estático, cria-se uma única cópia do que estiver a direta do modificador, todas as classes e objetos em qualquer lugar do projeto compartilharam essa mesma cópia como um ponteiro, uma variável passada por valor para várias structs, onde quer que eu altere essa variável, essa alteração terá escopo global. Quando se cria um método estático, não é necessário instanciar um objeto da classe onde o método estático está, basta acessar o método usando o nome da classe.
+Ao criar um atributo estático, cria-se uma variável que existe em um único local na memória e todas as classes e objetos em qualquer lugar do projeto compartilharam essa mesma cópia, onde quer que eu altere essa variável, essa alteração terá escopo global. Quando se cria um método estático, não é necessário instanciar um objeto da classe onde o método estático está, basta acessar o método e variável usando o nome da classe.
 ```JAVA
 class Quadrado{
 	static double areaQuadrado(double x){
