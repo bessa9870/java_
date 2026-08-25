@@ -34,9 +34,9 @@ public class CalcularCaixa{
 }
 ```
 É claro que aqui isso parece desnecessário, por que eu criaria N formas de se inicializar as variáveis de instância de uma classe só para usar a inicialização direta? Acontece que, na vida real nem sempre temos apenas uma opção de entrada. Um dos exemplos mais simples é um login. É bem habitual termos várias opções de login:
-	1. Podemos criar uma conta, digitando um email, nome de usuário e senha;
-	2. Criar uma conta usando o endereço de email;
-	3. Criar uma conta usando o Facebook.
+1. Podemos criar uma conta, digitando um email, nome de usuário e senha;
+2. Criar uma conta usando o endereço de email;	
+3. Criar uma conta usando o Facebook.
 
 No próprio GitHub nós temos essas opções, claro que, o construtor correto a ser utilizado será implementado através das estruturas condicionais if/else.
 ```JAVA
