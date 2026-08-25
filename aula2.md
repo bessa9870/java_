@@ -33,7 +33,27 @@ public class CalcularCaixa{
   }
 }
 ```
-*Eu achei desnecessário criar N construtores. Se o usuário quer calcular uma caixa perfeita, bastaria ele próprio entrar com valores idênticos, mas deve ter um uso já que essa possibilidade existe existe.*
+É claro que aqui isso parece desnecessário, por que eu criaria N formas de se inicializar as variáveis de instância de uma classe só para usar a inicialização direta? Acontece que, na vida real nem sempre temos apenas uma opção de entrada. Um dos exemplos mais simples é um login. É bem habitual termos várias opções de login:
+	1. Podemos criar uma conta, digitando um email, nome de usuário e senha;
+	2. Criar uma conta usando o endereço de email;
+	3. Criar uma conta usando o Facebook.
+
+No próprio GitHub nós temos essas opções, claro que, o construtor correto a ser utilizado será implementado através das estruturas condicionais if/else.
+```JAVA
+int opcaoEscolhida = 1; 
+
+Usuario novoUsuario;
+
+if (opcaoEscolhida == 1) {
+    // Usuário clicou em "Continuar com Google"
+    // O sistema aciona o construtor de 1 parâmetro
+    novoUsuario = new Usuario(tokenRecebido); 
+} else {
+    // Usuário preencheu o formulário completo
+    // O sistema aciona o construtor de 3 parâmetros
+    novoUsuario = new Usuario(emailDigitado, senhaDigitada, nomeDigitado); 
+}
+```
 
 ## Modificadores static e final:
 
