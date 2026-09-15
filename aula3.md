@@ -59,7 +59,7 @@ class Funcionario extends Pessoa{
     int horas;
 
     Funcionario(String nom, String cp, int di, int me, int an, String te, String em, String ru, int nu, int ce, double sa, String ca, int ho){
-        super(nom, cp, di, me, an, te, em, ru, nu, ce);
+        super(nom, cp, di, me, an, te, em, ru, nu, ce);  //Acesso o construtor da superclasse Pessoa
 
         cargo = ca;
         salario = sa;
@@ -75,7 +75,7 @@ class Cliente extends Pessoa{
     double valor_pedido;
 
     Cliente(String nom, String cp, int di, int me, int an, String te, String em, String ru, int nu, int ce, String fo, String pe, double va){
-        super(nom, cp, di, me, an, te, em, ru, nu, ce);
+        super(nom, cp, di, me, an, te, em, ru, nu, ce); // Acesso o construtor da superclasse Pessoa
     
         forma_de_pagamento = fo;
         pedido = pe;
@@ -83,8 +83,7 @@ class Cliente extends Pessoa{
     }
 }
 ```
+*Construtores não são herdados, usamos `super` para chamá-los durante a instanciação do objeto na memória.*
+ 
   Herança traz consigo reaproveitamento, evita repetição desnecessária, ao invés de repetir as variáveis que aparecem nas três classes, basta 
 declará-las na superclasse e usar `extends` para que a asubclasse tenha acesso a todos os membros da superclasse. 
-
-### O QUE É `super` ?
-  O super é o comando que chama os construtores da superclasse usando apenas os parâmetros do construtor específico.
