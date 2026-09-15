@@ -20,11 +20,11 @@ pedidos e forma de pagamento salva no sistema (cartão, pix..) já o funcionári
 Funcionario e Cliente, mas na programação orientada a objetos isso não é mais necessário, principalmente quando podemos empregar o uso do conceito de herança.
 Ao encarar de maneira lógica, além das suas características especificas, essas duas classes têm atributos relacionados com os da classe genérica (superclasse): 
 nome, nacionalidade, cpf, data de nascimento...
-  Ao invés de repetir esses atributos como: nome_pessoa, nome_funcionario, nome_cliente... Podemos simplesmente herdá-los da superclasse através do modificador
-`extends`. Veja como fica>
+  Ao invés de repetir esses atributos como: nome_pessoa, nome_funcionario, nome_cliente... Podemos simplesmente herdá-los da superclasse através da palavra-chave
+`extends` para acessar os membros e `super` para acessar o construtor / os construtores:
 
 1. Declaração da classe Pessoa
-``JAVA
+```JAVA
 class Pessoa{
     String nome;
     String cpf;
@@ -50,12 +50,41 @@ class Pessoa{
         cep = ce;
     }
 }
-``
-1. Declaração da subclasse Funcionario
+```
+2. Declaração da subclasse Funcionario
+```JAVA
+class Funcionario extends Pessoa{
+    String cargo;
+    double salario;
+    int horas;
 
-2. Declaração da subclasse Cliente
+    Funcionario(String nom, String cp, int di, int me, int an, String te, String em, String ru, int nu, int ce, double sa, String ca, int ho){
+        super(nom, cp, di, me, an, te, em, ru, nu, ce);
 
+        cargo = ca;
+        salario = sa;
+        horas = ho;
+    }
+}
+```
+3. Declaração da subclasse Cliente
+```JAVA
+class Cliente extends Pessoa{
+    String forma_de_pagamento;
+    String pedido;
+    double valor_pedido;
 
-A classe pessoa não vai suportar pois
+    Cliente(String nom, String cp, int di, int me, int an, String te, String em, String ru, int nu, int ce, String fo, String pe, double va){
+        super(nom, cp, di, me, an, te, em, ru, nu, ce);
+    
+        forma_de_pagamento = fo;
+        pedido = pe;
+        valor_pedido = va;
+    }
+}
+```
+  Herança traz consigo reaproveitamento de código e organização através da lógica, ao invés de repetir as variáveis que aparecem nas três classes, basta 
+declará-las na superclasse e usar `extends` para que a asubclasse tenha acesso a todos os membros da superclasse. 
 
-Herança traz consigo reaproveitamento de código e organização através da lógica, ao invés de criar uma variável nome para cada classe relacionada
+### O QUE É `super` ?
+  O super é o comando que chama os construtores da superclasse usando apenas os parâmetros do construtor específico.
