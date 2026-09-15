@@ -1,10 +1,10 @@
 # PROGRAMAÇÃO ORIENTADA A OBJETOS | 14/09/26
 
 ## HERANÇA
-  A herança é um mecanismo que permite criar uma classificação hierárquica no código, é o mesmo conceito aplicado no modelo entidade-relacionamento estendido.
-De início, você cria uma classe génerica (superclasse) com atributos (variáveis e métodos) próprios, e ao usar o conceito de herança, você é capaz de criar 
-classes (subclasses) que podem acessar os mesmos atributos (variáveis e métodos) daquela classe (superclasse). Vamos imaginar um programa que precise cadastrar 
-pessoas, tal qual um minimundo de um modelo entidade-relacionamento:
+  A herança é **um mecanismo que permite criar uma classificação hierárquica no código**, é o mesmo conceito aplicado no modelo entidade-relacionamento estendido.
+Primeiro você cria uma classe génerica (superclasse) com atributos (variáveis e métodos) próprios e depois pode criar classes (subclasses) que podem acessar os 
+atributos (variáveis e métodos) da calsse genérica (superclasse). Vamos imaginar um programa que precise cadastrar pessoas, tal qual um minimundo de um modelo 
+entidade-relacionamento:
 | Pessoa |
 | :-- |
 | nome |
@@ -20,10 +20,10 @@ pedidos e forma de pagamento salva no sistema (cartão, pix..) já o funcionári
 Funcionario e Cliente, mas na programação orientada a objetos isso não é mais necessário, principalmente quando podemos empregar o uso do conceito de herança.
 Ao encarar de maneira lógica, além das suas características especificas, essas duas classes têm atributos relacionados com os da classe genérica (superclasse): 
 nome, nacionalidade, cpf, data de nascimento...
-  Ao invés de repetir esses atributos como: nome_pessoa, nome_funcionario, nome_cliente... Podemos simplesmente herdá-los da superclasse através da palavra-chave
-`extends` para acessar os membros e `super` para acessar o construtor / os construtores:
+  Ao invés de repetir esses atributos em cada classe, podemos simplesmente herdá-los da superclasse através da palavra-chave `extends` para acessar os membros 
+  e o comando `super` para acessar o construtor / os construtores:
 
-1. Declaração da classe Pessoa
+1. Declaração da classe genérica Pessoa:
 ```JAVA
 class Pessoa{
     String nome;
@@ -51,7 +51,7 @@ class Pessoa{
     }
 }
 ```
-2. Declaração da subclasse Funcionario
+2. Declaração da subclasse Funcionario:
 ```JAVA
 class Funcionario extends Pessoa{
     String cargo;
@@ -67,7 +67,7 @@ class Funcionario extends Pessoa{
     }
 }
 ```
-3. Declaração da subclasse Cliente
+3. Declaração da subclasse Cliente:
 ```JAVA
 class Cliente extends Pessoa{
     String forma_de_pagamento;
@@ -83,7 +83,7 @@ class Cliente extends Pessoa{
     }
 }
 ```
-  Herança traz consigo reaproveitamento de código e organização através da lógica, ao invés de repetir as variáveis que aparecem nas três classes, basta 
+  Herança traz consigo reaproveitamento, evita repetição desnecessária, ao invés de repetir as variáveis que aparecem nas três classes, basta 
 declará-las na superclasse e usar `extends` para que a asubclasse tenha acesso a todos os membros da superclasse. 
 
 ### O QUE É `super` ?
