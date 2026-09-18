@@ -134,4 +134,4 @@ public class Pessoa {
 
   Irmãos não compartilham: Classes que herdam exatamente do mesmo pai (ex: Quadrado e Retangulo estendendo Quadrilatero) continuam sem acesso aos dados uma da outra.
 
-*Veja o exemplo que coloca isso em prática em no diretório `segundo_exemplo`.*
+*Veja o exemplo que coloca isso em prática no diretório `segundo_exemplo`.*
