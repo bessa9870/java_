@@ -86,5 +86,43 @@ class Cliente extends Pessoa{
 ```
 *Construtores não são herdados, usamos `super` para chamá-los durante a instanciação do objeto na memória.*
  
-  Herança traz consigo reaproveitamento, evita repetição desnecessária, ao invés de repetir as variáveis que aparecem nas três classes, basta 
-declará-las na superclasse e usar `extends` para que a asubclasse tenha acesso a todos os membros da superclasse. 
+  Herança traz reaproveitamento de código e evita repetição desnecessária, ao invés de repetir as variáveis que aparecem nas três classes, basta 
+declará-las na superclasse e usar `extends` para que a a subclasse tenha acesso a todos os membros da superclasse. 
+
+### MODIFICADORES DE ACESSO:
+Os modificadores de acesso em Java são palavras-chave que controlam a visibilidade de classes, métodos e atributos
+
+  public (Público): É a praça pública. Qualquer outra classe do seu sistema pode ir lá e acessar os valores. É muito perigoso deixar dados importantes assim.
+
+  private (Privado): É o cofre da classe. O acesso é restrito exclusivamente à própria classe onde o membro foi declarado, nem as classes-filhas 
+  podem acessar esses valores.
+
+  protected (Protegido): É o "segredo de família". Ele bloqueia o acesso para o resto do sistema (protegendo os dados de estranhos), mas libera o acesso total  
+  para as subclasses.
+
+### GETTERS E SETTERS
+  Como dito antes, deixar as variáveis de instância de uma classe públicas não é seguro, para dados sensíveis o correto é usar o modificador de acesso
+específico para o contexto. Para acessar e modificar de forma segura os atributos privados de uma classe, usamos os métodos de acesso `set` e `get`.
+
+O método get (pegar) serve para ler ou retornar o valor de um atributo.
+
+O método set (definir) serve para alterar ou atribuir um novo valor a esse atributo.
+```JAVA
+public class Pessoa {
+    // Atributo privado
+    private int idade;
+
+    // Método SET (modifica o valor)
+    public void setIdade(int idade) {
+        if (idade >= 0) { // Validação de segurança
+            this.idade = idade;
+        }
+    }
+
+    // Método GET (retorna o valor)
+    public int getIdade() {
+        return idade;
+    }
+}
+```
+*Veja o exemplo que coloca isso em prática em no diretório `segundo_exemplo`.*
