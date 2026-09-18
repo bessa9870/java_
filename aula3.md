@@ -125,4 +125,13 @@ public class Pessoa {
     }
 }
 ```
+
+### Herança Multinível - Efeito Cascata
+
+  Uma classe filha pode servir de classe mãe para uma nova geração (Ex: Classe A -> Classe B -> Classe C).
+
+  Acúmulo de Herança: A classe que está na base da árvore (C) recebe o "pacote completo". Ela acumula os atributos e métodos protegidos ou públicos de todas as classes que estão acima dela.
+
+  Irmãos não compartilham: Classes que herdam exatamente do mesmo pai (ex: Quadrado e Retangulo estendendo Quadrilatero) continuam sem acesso aos dados uma da outra.
+
 *Veja o exemplo que coloca isso em prática em no diretório `segundo_exemplo`.*
