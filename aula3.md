@@ -103,8 +103,8 @@ Os modificadores de acesso em Java são palavras-chave que controlam a visibilid
 
 ### GETTERS E SETTERS
   O que chamamos de getters e setters, são métodos customizados (criados por você) de acesso. 
-  2. O método set (definir) serve para alterar ou atribuir um novo valor a esse atributo.
-  1. O método get (pegar) serve para ler ou retornar o valor de um atributo.
+  1. O método set (definir) serve para alterar ou atribuir um novo valor a esse atributo.
+  2. O método get (pegar) serve para ler ou retornar o valor de um atributo.
 
   Podemos usá-los para criar validações de entrada mais robustas:
 ```JAVA
