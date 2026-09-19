@@ -3,8 +3,9 @@
 ## HERANÇA
   A herança é **um mecanismo que permite criar uma classificação hierárquica no código**, é o mesmo conceito aplicado no modelo entidade-relacionamento estendido.
 Primeiro você cria uma classe genérica (superclasse) com atributos (variáveis e métodos) próprios e depois pode criar classes (subclasses) que podem acessar os 
-atributos (variáveis e métodos) da classe genérica (superclasse). Vamos imaginar um programa que precise cadastrar pessoas, tal qual um minimundo de um modelo 
-entidade-relacionamento:
+atributos (variáveis e métodos) da classe genérica (superclasse). 
+
+Vamos imaginar um programa que precise cadastrar pessoas, tal qual um minimundo de um modelo entidade-relacionamento:
 | Pessoa |
 | :-- |
 | nome |
@@ -101,25 +102,29 @@ Os modificadores de acesso em Java são palavras-chave que controlam a visibilid
   para as subclasses.
 
 ### GETTERS E SETTERS
-  Como dito antes, deixar as variáveis de instância de uma classe públicas não é seguro, para dados sensíveis o correto é usar o modificador de acesso
-específico para o contexto. Para acessar e modificar de forma segura os atributos privados de uma classe, usamos os métodos de acesso `set` e `get`.
+  O que chamamos de getters e setters, são métodos customizados (criados por você) de acesso. 
+  2. O método set (definir) serve para alterar ou atribuir um novo valor a esse atributo.
+  1. O método get (pegar) serve para ler ou retornar o valor de um atributo.
 
-O método get (pegar) serve para ler ou retornar o valor de um atributo.
-
-O método set (definir) serve para alterar ou atribuir um novo valor a esse atributo.
+  Podemos usá-los para criar validações de entrada mais robustas:
 ```JAVA
 public class Pessoa {
-    // Atributo privado
+    //Atributo privado
     private int idade;
 
-    // Método SET (modifica o valor)
-    public void setIdade(int idade) {
+    //Construtor chama o set
+    Pessoa(int i){
+        setIdade(i);
+    }
+
+    //Método SET (modifica o valor)
+    public void setIdade(int i) {
         if (idade >= 0) { // Validação de segurança
-            this.idade = idade;
+            idade = i;
         }
     }
 
-    // Método GET (retorna o valor)
+    //Método GET (retorna o valor)
     public int getIdade() {
         return idade;
     }
@@ -130,7 +135,7 @@ public class Pessoa {
 
   Uma classe filha pode servir de classe mãe para uma nova geração (Ex: Classe A -> Classe B -> Classe C).
 
-  Acúmulo de Herança: A classe que está na base da árvore (C) recebe o "pacote completo". Ela acumula os atributos e métodos protegidos ou públicos de todas as classes que estão acima dela.
+  Acúmulo de Herança: A classe que está na base da árvore (C) acumula os atributos e métodos protegidos ou públicos de todas as classes que estão acima dela.
 
   Irmãos não compartilham: Classes que herdam exatamente do mesmo pai (ex: Quadrado e Retangulo estendendo Quadrilatero) continuam sem acesso aos dados uma da outra.
 
