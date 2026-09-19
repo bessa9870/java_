@@ -22,31 +22,6 @@ Funcionario{} e Cliente{}, mas na programação orientada a objetos isso não é
   Ao encarar de maneira lógica, além das suas características especificas, essas duas classes têm **atributos relacionados com os da classe genérica (superclasse)**: 
 *nome, nacionalidade, cpf, data de nascimento...*
 
-  Ao invés de repetir esses atributos em cada classe, podemos simplesmente **herdá-los da superclasse** através das palavras-chave `extends` para acessar os membros 
-e `super` que estabelecepara acessar o construtor / os construtores:
-  1. `Extends`: Permite que uma nova classe herde todos os **atributos** e **métodos** de uma classe já existente.
-  2. `super`: Estabelece uma comunicação direta com a classe-mãe, podendo acessar seus construtores e métodos.
-
-### Observação sobre o super:
-O super pode servir como critério de desempate. Se a subclasse possui uma método com o mesmo identificador da superclasse, o JAVA dará prioridade ao método mais novo, 
-mas se for necessário acessar acessar o método da superclasse, basta usar a palavra-chave super e o JAVA listará o método mais velho da superclasse com o mesmo identificador 
-e saberá que você quer usá-lo ao invés do método mais novo.
-```JAVA
-//Dentro da classe Cilindro
-    double area(){
-        return super.area() + circ() * altura; 
-        //Repare, o nome do método mais novo é area, dentro desse método
-        //eu chamo outro método com o mesmo identificador, mas usando a
-        //palavra-chave super, dizendo ao JAVA para acessar o método da
-        //superclasse
-    }
-    double volume(){
-        return super.area()*altura;
-        //Aqui é a mesma situação
-    }
-```
-**Além de métodos, também funciona ccom variáveis**
-
 1. Declaração da classe genérica Pessoa:
 ```JAVA
 class Pessoa{
@@ -109,8 +84,31 @@ class Cliente extends Pessoa{
 ```
 *Construtores não são herdados, usamos `super` para chamá-los durante a instanciação do objeto na memória.*
  
-  Herança traz reaproveitamento de código e evita repetição desnecessária, ao invés de repetir as variáveis que aparecem nas três classes, basta 
-declará-las na superclasse e usar `extends` para que a a subclasse tenha acesso a todos os membros da superclasse. 
+
+  Ao invés de repetir esses atributos em cada classe, podemos simplesmente **herdá-los da superclasse** através das palavras-chave `extends` para acessar os membros 
+e `super` que estabelecepara acessar o construtor / os construtores:
+  1. `Extends`: Permite que uma nova classe herde todos os **atributos** e **métodos** de uma classe já existente.
+  2. `super`: Estabelece uma comunicação direta com a classe-mãe, podendo acessar seus construtores e métodos.
+
+### Observação sobre o super:
+O super pode servir como critério de desempate. Se a subclasse possui uma método com o mesmo identificador da superclasse, o JAVA dará prioridade ao método mais novo, 
+mas se for necessário acessar acessar o método da superclasse, basta usar a palavra-chave super e o JAVA listará o método mais velho da superclasse com o mesmo identificador 
+e saberá que você quer usá-lo ao invés do método mais novo.
+```JAVA
+//Dentro da classe Cilindro
+    double area(){
+        return super.area() + circ() * altura; 
+        //Repare, o nome do método mais novo é area, dentro desse método
+        //eu chamo outro método com o mesmo identificador, mas usando a
+        //palavra-chave super, dizendo ao JAVA para acessar o método da
+        //superclasse
+    }
+    double volume(){
+        return super.area()*altura;
+        //Aqui é a mesma situação
+    }
+```
+**Além de métodos, também funciona ccom variáveis**
 
 ### MODIFICADORES DE ACESSO:
 Os modificadores de acesso em Java são palavras-chave que controlam a visibilidade de classes, métodos e atributos
