@@ -119,7 +119,7 @@ Os modificadores de acesso em Java são palavras-chave que controlam a visibilid
   podem acessar esses valores.
 
   protected (Protegido): É o "segredo de família". Ele bloqueia o acesso para o resto do sistema (protegendo os dados de estranhos), mas libera o acesso total  
-  para as subclasses.
+  para as subclasses e para classes no mesmo package.
 
 ### GETTERS E SETTERS
   O que chamamos de getters e setters, **são métodos customizados (criados por você) de acesso que acessam variáveis com modificadores não públicos.** Uma variável
